@@ -2,9 +2,12 @@ pipeline {
   agent any
   stages {
     stage('Test') {
-      steps {
-        sh 'docker --version'
-      }
+       parallel(
+       install: {
+                    sh "echo 'instaling' "
+                }, sonar: {
+                    sh "echo 'sonaring' "
+                })
     }
   }
 }
