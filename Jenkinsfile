@@ -1,6 +1,9 @@
 pipeline {
-  docker { image 'node:7-alpine' }
-  stages {
+     docker {
+            image 'hseeberger/scala-sbt'
+            }
+
+    stages {
     stage('build') {
       steps {
         sh 'sbt compile'
