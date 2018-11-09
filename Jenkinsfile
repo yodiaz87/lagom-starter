@@ -1,15 +1,9 @@
 pipeline {
-  agent {
-    docker {
-      image 'hseeberger/scala-sbt'
-      label 'docker'
-    }
-
-  }
+  agent any
   stages {
     stage('Test') {
       steps {
-        sh 'ls -la'
+        sh 'docker --version'
       }
     }
   }
