@@ -1,17 +1,12 @@
 pipeline {
-  agent{
-    docker {
-        image 'hseeberger/scala-sbt'
+    agent {
+        docker { image 'node:7-alpine' }
     }
-  }
-
-
     stages {
-    stage('build') {
-      steps {
-
-        sh 'sbt compile'
-      }
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
     }
-  }
 }
